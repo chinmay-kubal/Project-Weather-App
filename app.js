@@ -1,10 +1,10 @@
-var input = document.querySelector(".input_text");
-var button = document.querySelector(".submit");
-var main = document.querySelector(".name");
-var temp = document.querySelector(".temp");
-var desc = document.querySelector(".desc");
+let input = document.querySelector(".input_text");
+let button = document.querySelector(".submit");
+let main = document.querySelector(".name");
+let temp = document.querySelector(".temp");
+let desc = document.querySelector(".desc");
 
-button.addEventListener("click", function (name) {
+button.addEventListener("click", function () {
   fetch(
     "https://api.openweathermap.org/data/2.5/weather?q=" +
       input.value +
@@ -12,9 +12,9 @@ button.addEventListener("click", function (name) {
   )
     .then((response) => response.json())
     .then((data) => {
-      var tempValue = data["main"]["temp"];
-      var nameValue = data["name"];
-      var descValue = data["weather"][0]["description"];
+      let tempValue = data["main"]["temp"];
+      let nameValue = data["name"];
+      let descValue = data["weather"][0]["description"];
 
       main.innerHTML = nameValue;
       desc.innerHTML = "Desc - " + descValue;
